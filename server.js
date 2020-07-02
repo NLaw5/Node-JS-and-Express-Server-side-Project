@@ -14,6 +14,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true})) //Added body parser to check for form validation
+
 const PORT = process.env.PORT || 3000; //THIS IS FOR HEROKU
 
 

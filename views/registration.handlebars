@@ -1,0 +1,21 @@
+
+    <div class = "form-container">
+        <div class = "form">
+                <form class="login-form" action ="" method = "post">
+                    <h2>Create An Account</h2>
+                    <div class = "icons">
+                        <a href="#"><i class="fab fa fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa fa-twitter-square"></i></a>
+                        <a href="#"><i class="fab fa fa-instagram"></i></a>
+                    </div>
+                    <input type="text" name = "firstName" value="{{fn}}" placeholder="FirstName">
+                    <input type="text" name= "lastName" value="{{ln}}" placeholder="LastName">
+                    <input type = "text" name="Email" value="{{ev}}" placeholder="Email">
+                    <input type="password" name="Password" value="{{pv}}" placeholder="Password">
+                    {{#each errorsMessages}}
+                    <div class="login-errors">{{this}}</div>
+                    {{/each}}
+                    <button type="submit" name="button">Register Now!</button>
+                </form>
+        </div>
+    </div>   

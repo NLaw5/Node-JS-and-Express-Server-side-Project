@@ -1,0 +1,48 @@
+
+    <div class ="Home_Main_Content">
+        <h1 class = "header_main_content">How it Works: </h1>
+            <div class = "grid-container">
+                <div>
+                    <img src="/img/order.jpg" class="orderpic">
+                    <h1>Order</h1>
+                    <p>Order Online! We've got a great selection of foods that you can try no matter how picky the eater!</p>
+                </div>
+                <div>
+                    <img src="/img/cooking.png" class="cookingpic">
+                    <h1>Cooking</h1>
+                    <p>Our food is specially prepared by our professional chefs! Each chef brings their own unique style that your palate
+                        will find delicious!
+                    </p>
+                </div>
+                <div>
+                    <img src="/img/delivery.jpg" class="deliverypic">
+                    <h1>Delivery</h1>
+                    <p>Our drivers deliver quickly and efficiently. Each of our
+                        drivers make sure to arrive on-time so your food is still hot when it arrives!
+                    </p>
+                </div>
+                <div>
+                    <img src="/img/eat.png" class="eatingpic">
+                    <h1>Eating</h1>
+                    <p>And here's the result! Piping, hot food for you!</p>
+                </div>
+            </div>
+    </div>
+
+  <div class = "description_for_top_meals">
+    <h1> Here are some of the highest rated foods from our customer reviews!</h1>
+  </div>
+
+  <div class ="Home_Main_Content">
+        <div class = "grid-container">
+             {{#each data}}
+            <div>
+                <div class="top1">
+                    <img src="/img/{{this.Image}}">
+                </div>
+                <h1 class="title1">{{this.Name}}</h1>
+                <p class="Cost1"> {{this.Cost}}</p>
+            </div>
+             {{/each}}
+        </div>
+    </div>

@@ -1,0 +1,15 @@
+
+<div class ="Listings_Main_Content">
+    <div class = "grid-container">
+        {{#each data}}
+        <div>
+            <div class="mptop1">
+                <img src="/img/{{this.Image}}">
+            </div>
+            <h1 class="mptitle1">{{this.Name}}</h1>
+            <p class="mpdesc1"> {{this.Desc}}
+            </p>
+        </div>
+        {{/each}}
+    </div>
+</div>

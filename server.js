@@ -6,7 +6,7 @@ const product = require("./models/product");
 const bodyParser = require('body-parser');
 
 //load environment variable file
-require('dovenv').config({path:"./config/keys.env"});
+require('dotenv').config({path:"./config/keys.env"});
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');

@@ -5,6 +5,9 @@ const exphbs = require('express-handlebars');
 const product = require("./models/product");
 const bodyParser = require('body-parser');
 
+//load environment variable file
+require('dovenv').config({path:"./config/keys.env"});
+
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
@@ -140,7 +143,7 @@ app.post("/registration", (req,res) => {
         const {firstName, lastName, Email, Password} = req.body;
         
         const sgMail = require('@sendgrid/mail');
-        sgMail.setApiKey("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");
+        sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
         const msg = {
             to: `${Email}`,
             from: 'newn.law123@gmail.com',

@@ -27,6 +27,7 @@ app.listen(PORT, ()=>{
 
 
 app.get("/",(req,res)=>{
+
     res.render("home", {
         title : "Home",
         data : product.getAllProducts()
@@ -145,12 +146,13 @@ app.post("/registration", (req,res) => {
         
         const sgMail = require('@sendgrid/mail');
         sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
+        //sgMail.setApiKey("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");
         const msg = {
             to: `${Email}`,
-            from: 'newn.law123@gmail.com',
+            from: "newn.law123@gmail.com",
             subject: 'Welcome Email Web322:Assignment 2',
-            html: `Visitor's Full Name: ${firstName} ${lastName}
-                   Visitor's Email Address ${Email}
+            html: `Visitor's Full Name: ${firstName} ${lastName} <br>
+                   Visitor's Email Address ${Email} <br>
                    Visitor's Password ${Password}`
         };
         sgMail.send(msg)

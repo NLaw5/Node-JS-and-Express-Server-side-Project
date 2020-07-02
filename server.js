@@ -136,6 +136,29 @@ app.post("/registration", (req,res) => {
     }
     else 
     {
-        res.redirect("/") 
+
+        const {firstName, lastName, Email, Password} = req.body;
+        
+        const sgMail = require('@sendgrid/mail');
+        sgMail.setApiKey("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");
+        const msg = {
+            to: `${Email}`,
+            from: 'newn.law123@gmail.com',
+            subject: 'Welcome Email Web322:Assignment 2',
+            html: `Visitor's Full Name: ${firstName} ${lastName}
+                   Visitor's Email Address ${Email}
+                   Visitor's Password ${Password}`
+        };
+        sgMail.send(msg)
+        .then(()=>{
+            //res.redirect("/") 
+            res.render("home", {
+                send: Email,
+            })
+        })
+        .catch(err=>{
+            console.log(`Error ${err}`);
+        })
+        
     }
 })

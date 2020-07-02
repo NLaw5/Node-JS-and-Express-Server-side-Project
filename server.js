@@ -159,6 +159,8 @@ app.post("/registration", (req,res) => {
         .then(()=>{
             //res.redirect("/") 
             res.render("home", {
+                title : "Home",
+                data : product.getAllProducts(),
                 send: Email,
             })
         })
